@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
+import { FileText, Github, Linkedin } from "lucide-react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -24,9 +23,55 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${dmSans.variable} antialiased`}>
+        <header className="py-4">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex items-center justify-between gap-4">
+              <Link className="inline-block" href="/">
+                <Image
+                  src="/memoji.png"
+                  width="32"
+                  height="32"
+                  alt="Cullen Bayne"
+                />
+              </Link>
+              <div className="hidden xl:block">
+                <ul className="flex items-center gap-8">
+                  <li>
+                    <Link
+                      className="flex items-center gap-1 text-sm leading-none font-medium transition-colors duration-200 ease-in-out hover:text-neutral-400"
+                      href="https://www.linkedin.com/in/cullen-bayne-1b83b7168/"
+                      target="_blank"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                      <span>LinkedIn</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="flex items-center gap-1 text-sm leading-none font-medium transition-colors duration-200 ease-in-out hover:text-neutral-400"
+                      href="https://github.com/kumabayne"
+                      target="_blank"
+                    >
+                      <Github className="h-4 w-4" />
+                      <span>Github</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <a
+                      className="flex items-center gap-1 text-sm leading-none font-medium transition-colors duration-200 ease-in-out hover:text-neutral-400"
+                      href="/cullenbayne_resume.pdf"
+                      download
+                    >
+                      <FileText className="h-4 w-4" />
+                      <span>Resume</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
         {children}
       </body>
     </html>
