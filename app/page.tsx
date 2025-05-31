@@ -12,15 +12,6 @@ const projects = [
     href: "https://filmsnail.vercel.app/",
     repo: "https://github.com/kumabayne/next-movie",
   },
-  {
-    id: "2",
-    category: "Next.js",
-    title: "Japangram",
-    description:
-      "A place to share your experiences and favorite photos of Japan.",
-    href: "https://japangram.vercel.app/",
-    repo: "https://github.com/kumabayne/japangram",
-  },
 ];
 
 export default function Home() {
@@ -100,7 +91,7 @@ export default function Home() {
               id="projects"
               className="text-xs font-extrabold tracking-widest uppercase"
             >
-              Projects
+              Latest Projects
             </h2>
             <div className="mt-4 space-y-4">
               {projects.map((project) => (
