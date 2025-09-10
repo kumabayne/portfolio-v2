@@ -3,7 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
-import { FileText, Github, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -56,16 +56,6 @@ export default function RootLayout({
                       <Github className="h-4 w-4" />
                       <span>Github</span>
                     </Link>
-                  </li>
-                  <li>
-                    <a
-                      className="flex items-center gap-1 text-sm leading-none font-medium transition-colors duration-200 ease-in-out hover:text-neutral-400"
-                      href="/cullenbayne_resume.pdf"
-                      download
-                    >
-                      <FileText className="h-4 w-4" />
-                      <span>Resume</span>
-                    </a>
                   </li>
                 </ul>
               </div>

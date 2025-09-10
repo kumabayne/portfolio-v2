@@ -49,15 +49,7 @@ export default function Home() {
                 >
                   github
                 </Link>{" "}
-                , grab my{" "}
-                <a
-                  className="border-b border-transparent font-medium text-white transition-colors duration-200 ease-in-out hover:border-white"
-                  href="/cullenbayne_resume.pdf"
-                  download
-                >
-                  resume
-                </a>{" "}
-                or check out my latest{" "}
+                , or check out my latest{" "}
                 <a
                   className="border-b border-transparent font-medium text-white transition-colors duration-200 ease-in-out hover:border-white"
                   href="#projects"
